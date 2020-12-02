@@ -25,6 +25,7 @@ func main() {
 	s1.rate = 4500
 	printInfo(s1)
 
+
 	s2 := defaultSubscriber("Park")
 	printInfo(s2)
 }
