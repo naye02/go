@@ -20,11 +20,18 @@ func defaultSubscriber(name string) subscriber {
 	s.active = true
 	return s
 }
-
+func applyDiscount(s *subscriber){
+	s.rate = 4000//주소값으로 받지 않으면 값이 바뀌지 않음.
+}
 func main() {
 	s1 := defaultSubscriber("Kim")
 	s1.rate = 4500
 	printInfo(s1)
+
 	s2 := defaultSubscriber("Park")
 	printInfo(s2)
+
+	var s3 subscriber
+	applyDiscount(&s3)//구조체에서 포인터 동작함.
+	fmt.Println(s3.rate)
 }
